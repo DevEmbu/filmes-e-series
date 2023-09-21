@@ -12,5 +12,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
        <Rotas />
      </BrowserRouter>
      <GlobalStyle />
-  </React.StrictMode>,
+  </React.StrictMode>
 )
