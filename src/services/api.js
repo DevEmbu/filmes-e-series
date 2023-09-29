@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-// https://api.themoviedb.org/3/movie/popular?language=en-US&page=1' \
+
+// https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg
 
 const api = axios.create ({
     baseURL:'https://api.themoviedb.org/3',

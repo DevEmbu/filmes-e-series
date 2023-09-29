@@ -2,18 +2,21 @@ import {createGlobalStyle} from 'styled-components'
 
 export default createGlobalStyle`
     *{
-        margin:0;
+        margin: 0;
         padding: 0;
         box-sizing: border-box;
         outline: none;
         text-decoration: none;
         font-family: 'Manrope', sans-serif;
+        color: #ffffff;
     }
 
     body{
-        background-color: #c0c0c0;
-        margin: 20px;
-        padding: 10px;
+        background-color: #000000;
+        background-position: center;
+        background-size: cover;
+      
+    
     }
 
 `
