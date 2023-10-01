@@ -4,7 +4,7 @@ function Header(){
 
     return (
         <div>
-            <img src={Logo} alt="logo-devembu" style={{width:200}} />
+            <img src={ Logo } alt="logo-devembu" style={{width:150}}/>
         </div>
     )
 }

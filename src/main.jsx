@@ -6,6 +6,7 @@ import GlobalStyle  from './styles/globalStyles'
 
 import Rotas from './rootes/rootes.jsx'
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
      <BrowserRouter>
