@@ -5,7 +5,11 @@ background-image: url(${(props) => props.img});
 height: 100vh;
 background-position: center;
 background-size: cover;
+display: flex;
+align-items: center;
+justify-content: center;
 
+/* mascara para deixar a visibilidade um pouco escura
 &::before {
     content: '';
     position: absolute;
@@ -15,5 +19,5 @@ background-size: cover;
     height: 100%;
     background-color: rgba(0,0,0, 0.5);
 } 
-
+*/
 `
