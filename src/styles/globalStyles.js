@@ -14,7 +14,10 @@ export default createGlobalStyle`
     body{
         background-color: #000000;
         background-position: center;
-        background-size: cover;     
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     
     }
 
