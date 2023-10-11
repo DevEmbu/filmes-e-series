@@ -4,21 +4,49 @@ import { useState, useEffect } from 'react'
 import Header from '../../components/Header'
 import Button from '../../components/Button'
 import { ContainerButton } from '../../components/Button/styles'
+import Slider from '../../components/Slider'
+import { getImages } from '../../utils/getImages'
 
 
 function Home(){
     const [movie, setMovie] = useState()
+    const [topMovies, setTopMovies] = useState()
+    const [topSeries, setTopSeries] = useState()
 
     useEffect(() => {
         async function getMovies(){
         const {
             data: {results }
         } = await api.get('/movie/popular')
-        setMovie(results[8])
+        setMovie(results[9])
             
         }
-       
-        getMovies()   
+
+     {/* Função para Buscar Dados de Filmes na API */}
+
+        async function getTopMovies(){
+          const {
+            data: {results}
+          } = await api.get('/movie/top_rated')
+
+          console.log(results)
+          setTopMovies(results)
+        }
+     {/* Função para Buscar Dados de Series na API */}
+
+        async function getTopSeries(){
+          const {
+              data: {results }
+          } = await api.get('/tv/top_rated')
+
+          console.log(results)
+          setTopSeries(results)
+              
+          }
+              
+        getMovies()  
+        getTopMovies()  
+        getTopSeries()
                       
     }, [])
 
@@ -26,13 +54,11 @@ function Home(){
     return(  
         <>  
         {movie && (
-         <Background 
-              img={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} >
-            <Container>
+         <Background img={getImages(movie.backdrop_path)}>
+            <Container>         
              <Info>
                <h1>{movie.title}</h1>
                <p>{movie.overview}</p>
-
                  <ContainerButton>
                     <Button red={true}>Assista Agora</Button>
                     <Button red={false}>Assista o Trailler</Button>
@@ -40,11 +66,13 @@ function Home(){
              
              </Info>
               <Poster>
-                <img alt='capa-do-filme' src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}/>
+                <img alt="capa-do-filme" src={getImages(movie.poster_path)}/>
               </Poster>
             </Container>
         </ Background>
         )}
+         {topMovies && <Slider Info={topMovies} title={'Top Filmes'} />}
+         {topSeries && <Slider Info={topSeries} title={'Top Series'} />}
         </>
     )
 }

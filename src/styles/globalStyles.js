@@ -9,6 +9,7 @@ export default createGlobalStyle`
         text-decoration: none;
         font-family: 'Manrope', sans-serif;
         color: #ffffff;
+
     }
 
     body{
@@ -18,7 +19,7 @@ export default createGlobalStyle`
         display: flex;
         align-items: center;
         justify-content: center;
-    
-    }
+        
 
+    }
 `
